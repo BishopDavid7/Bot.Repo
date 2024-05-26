@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORTUNAFLOW FOREX TRADING BOT</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color: #c9ff9e;">
+  <div class="container">
+    <h1>FORTUNAFLOW FOREX TRADING BOT</h1>
+    <form id="botForm">
+      <label for="currencyPair">Currency Pair:</label>
+      <select id="currencyPair" name="currencyPair" required>
+        <option value="EURUSD">EURUSD</option>
+        <option value="AUDUSD">AUDUSD</option>
+        <option value="GBPUSD">GBPUSD</option>
+        <option value="XAUUSD">XAUUSD</option>
+        <option value="USDCAD">USDCAD</option>
+        <option value="USDJPY">USDJPY</option>
+        <option value="NZDUSD">NZDUSD</option>
+      </select>
+      <label for="positionType">Position Type:</label>
+      <select id="positionType" name="positionType" required>
+        <option value="long" style="background-color: green;">Long (Buy) Position</option>
+        <option value="short" style="background-color: red;">Short (Sell) Position</option>
+      </select>
+      <label for="portfolioSize">Portfolio Size (in USD):</label>
+      <input type="number" id="portfolioSize" name="portfolioSize" step="0.01" required>
+      <label for="riskPercentage">Percentage of Portfolio to be Risked:</label>
+      <input type="number" id="riskPercentage" name="riskPercentage" step="0.01" min="0" max="100" required>
+      <label for="leverage">Leverage:</label>
+      <input type="number" id="leverage" name="leverage" min="1" max="2000" required>
+      <label for="entryPrice">Entry Price:</label>
+      <input type="number" id="entryPrice" name="entryPrice" step="0.0001" required>
+      <label for="stopLoss">Stop Loss:</label>
+      <input type="number" id="stopLoss" name="stopLoss" step="0.0001" required>
+      <label for="takeProfit">Take Profit:</label>
+      <input type="number" id="takeProfit" name="takeProfit" step="0.0001" required>
+      <button type="submit">Launch Trade Session</button>
+    </form>
+    <div id="longPositionTab" class="tab">
+      <h2>Long (Buy) Position</h2>
+      <p>Predicted Stop Loss: <span id="longStopLoss"></span></p>
+      <p>Predicted Take Profit: <span id="longTakeProfit"></span></p>
+      <p>Potential Profit: <span id="longPotentialProfit"></span></p>
+      <p>Potential Loss: <span id="longPotentialLoss"></span></p>
+    </div>
+    <div id="shortPositionTab" class="tab">
+      <h2>Short (Sell) Position</h2>
+      <p>Predicted Stop Loss: <span id="shortStopLoss"></span></p>
+      <p>Predicted Take Profit: <span id="shortTakeProfit"></span></p>
+      <p>Potential Profit: <span id="shortPotentialProfit"></span></p>
+      <p>Potential Loss: <span id="shortPotentialLoss"></span></p>
+    </div>
+    <div id="mt4Link" class="mt-link">
+      <p>Link to MetaTrader 4</p>
+      <!-- Add link to MetaTrader 4 -->
+    </div>
+    <div id="mt5Link" class="mt-link">
+      <p>Link to MetaTrader 5</p>
+      <!-- Add link to MetaTrader 5 -->
+    </div>
+    <audio id="sound" src="notification.mp3"></audio>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
